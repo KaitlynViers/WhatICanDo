@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="file3.css"/>
+    <title>Document</title>
+</head>
+<nav>
+    <div id="navbar">
+        <a href="#default" id="logo">Kaitlyn's Abilities</a>
+        <div id="navbar-right">
+          <a href="file.html">Home</a>
+          <a href="file2.html">Photos</a>
+          <a class="active" href="file3.html">Animation</a>
+          <a href="file4.html">Video</a>
+        </div>
+      </div> 
+</nav>
+<body>
+    <h1 class="glow">This sentence is glowing</h1>
+    
+    <!-- Use a button to open the snackbar -->
+<button onclick="myFunction()">This sentence makes something appear, click me</button>
+
+<!-- The actual snackbar -->
+<div id="snackbar">something</div> 
+
+<div class="image-container">
+    <div class="text">This sentence is a cutout</div>
+  </div> </body>
+<script>
+    function myFunction() {
+  // Get the snackbar DIV
+  var x = document.getElementById("snackbar");
+
+  // Add the "show" class to DIV
+  x.className = "show";
+
+  // After 3 seconds, remove the show class from DIV
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+
+
+
+</script>
+</html>

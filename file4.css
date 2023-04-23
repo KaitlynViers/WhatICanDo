@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+    background-color: #222;
+  }
+
+#navbar {
+    overflow: hidden;
+    background-color: transparent;
+    padding: 90px 10px; /* Large padding which will shrink on scroll (using JS) */
+    transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+    position: fixed; /* Sticky/fixed navbar */
+    width: 100%;
+    top: 0; /* At the top */
+    z-index: 99;
+    
+  }
+  
+  /* Style the navbar links */
+  #navbar a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+  }
+  
+  /* Style the logo */
+  #navbar #logo {
+    font-size: 35px;
+    font-weight: bold;
+    transition: 0.4s;
+    color: forestgreen;
+  }
+  
+  /* Links on mouse-over */
+  #navbar a:hover {
+    background-color: transparent;
+    color: WHITE;
+  }
+  
+  /* Style the active/current link */
+  #navbar a.active {
+    background-color: forestgreen;
+    color: white;
+  }
+  
+  /* Display some links to the right */
+  #navbar-right {
+    float: right;
+  }
+  
+  /* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
+  @media screen and (max-width: 580px) {
+    #navbar {
+      padding: 20px 10px !important; /* Use !important to make sure that JavaScript doesn't override the padding on small screens */
+    }
+    #navbar a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    #navbar-right {
+      float: none;
+    }
+  } 
+
+   /* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  
+  /* Add some content at the bottom of the video/page */
+  .content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  /* Style the button used to pause/play the video */
+  #myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: white;
+    color: black;
+    cursor: pointer;
+  }
+  
+  #myBtn:hover {
+    background: #ddd;
+    color: black;
+  } 

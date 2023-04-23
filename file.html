@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="file.css"/>
+    <script type="text/javascipt" src="file.js"></script>
+    <title>Document</title>
+</head> 
+<nav>
+    <div id="navbar">
+        <a href="#default" id="logo">Kaitlyn's Abilities</a>
+        <div id="navbar-right">
+          <a class="active" href="file.html">Home</a>
+          <a href="file2.html">Photos</a>
+          <a href="file3.html">Animation</a>
+          <a href="file4.html">Video</a>
+        </div>
+      </div> 
+</nav>
+<body>
+    <!--Container for image gallery-->
+    <div class="container">
+
+         <!--Full-width images with number text--> 
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+      <img src="bookpages.jpg" style="width:100%"/>
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 /  6</div>
+      <img src="monkey.jpg" style="width:100%"/>
+  </div>
+
+
+  <div class="mySlides">
+    <div class="numbertext">3/  6</div>
+      <img src="beautyinnature.jpg" style="width:100%"/>
+  </div>
+
+
+  <div class="mySlides">
+    <div class="numbertext">4 /  6</div>
+      <img src="relaxing.jpg" style="width:100%"/>
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 /  6</div>
+      <img src="sumer.jpg" style="width:100%"/>
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">6 /  6</div>
+      <img src="waterdripping.jpg" style="width:100%"/>
+  </div>
+
+ 
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <!-- Image text -->
+    <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+    
+      <!-- Thumbnail images -->
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="bookpages.jpg" style="width:100%" onclick="currentSlide(2)" alt="Neat photography skills"/>
+        </div>
+        
+        <div class="column">
+          <img class="demo cursor" src="monkey.jpg" style="width:100% " onclick="currentSlide(4)" alt="Monkey"/>
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="beautyinnature.jpg" style="width:100%" onclick="currentSlide(5)" alt="mountain with river"/>
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="relaxing.jpg" style="width:100%" onclick="currentSlide(6)" alt="peaceful stones"/>
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="sumer.jpg" style="width:100%" onclick="currentSlide(7)" alt="summer time"/>
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="waterdripping.jpg" style="width:100%" onclick="currentSlide(8)" alt="wine glass trick"/>
+          </div>
+          
+      </div>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("demo");
+          let captionText = document.getElementById("caption");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+          captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+        // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("navbar").style.padding = "30px 10px";
+    document.getElementById("logo").style.fontSize = "25px";
+  } else {
+    document.getElementById("navbar").style.padding = "80px 10px";
+    document.getElementById("logo").style.fontSize = "35px";
+  }
+} 
+
+        </script>
+</body>
+</html>
